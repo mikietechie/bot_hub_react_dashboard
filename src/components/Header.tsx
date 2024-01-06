@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const Header: FC = () => {
+export const HeaderComponent: FC = () => {
     return (
         <header className="row">
 

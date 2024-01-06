@@ -1,13 +1,13 @@
 import { FC } from "react";
-import { Header } from "./Header";
-import { Main } from "./Main";
+import { HeaderComponent } from "./Header";
+import { MainComponent } from "./Main";
 
-export const Layout: FC = () => {
+export const LayoutComponent: FC = () => {
 
     return (
-        <div className="container py-3">
-            <Header />
-            <Main />
+        <div className="container py-5">
+            <HeaderComponent />
+            <MainComponent />
         </div>
     )
 }

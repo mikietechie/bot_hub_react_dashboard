@@ -1,10 +1,10 @@
 import './App.scss'
-import { Layout } from './components/Layout'
+import { LayoutComponent } from './components/Layout'
 
 function App() {
 
   return (
-    <Layout />
+    <LayoutComponent />
   )
 }
 
