@@ -4,24 +4,29 @@ $active: #1C64F2;
 
 body {
   background-color: $black;
+
   * {
     border-color: #222B44 !important;
   }
 }
 
-
 // Utilities
 .dark-bg {
   background-color: $dark !important;
 }
+
 .black-bg {
   background-color: $dark !important;
 }
+
 .white-fg {
   color: #fff !important;
 }
+
 .active-fg {
-  &, * {
+
+  &,
+  * {
     color: $active !important;
   }
 }
@@ -30,7 +35,6 @@ body {
   font-weight: 600;
   line-height: 26px;
   font-size: 20px;
-  // margin-bottom: 16px;
 }
 
 // Ant Overides
@@ -41,6 +45,7 @@ body {
   .ant-pagination-item-active {
     background-color: $active;
   }
+
   .ant-pagination-options {
     display: none;
   }
@@ -54,27 +59,33 @@ body {
   * {
     color: #fff !important;
   }
-  th, td {
+
+  th,
+  td {
     font-size: 14px;
     font-weight: 500;
     line-height: 18px;
   }
+
   background-color: $dark !important;
+
   thead {
     th {
       background-color: $black !important;
-      
     }
   }
+
   tbody {
 
     tr.ant-table-row {
-      &:hover > td {
+      &:hover>td {
         background: none !important;
       }
+
       td {
         button {
           border-width: 0px;
+
           * {
             color: $active !important;
           }
@@ -82,5 +93,5 @@ body {
       }
     }
   }
-  
+
 }

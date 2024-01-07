@@ -72,12 +72,10 @@ export const DrawerComponent: FC<{ user: IUser, close: VoidFunction }> = ({ user
             <Content>
                 <Paragraph className="tp6002026 white-fg">{user.email}&nbsp;<CloseOutlined onClick={close} style={{ "float": "right" }} /></Paragraph>
                 <Paragraph className="tp6002026 white-fg">{user.name}</Paragraph>
-
                 {
                     transactions.length &&
                     <Area {...chartConf} />
                 }
-
                 <Typography className="tp6002026 white-fg" style={{paddingBottom: "16px"}}>История операций</Typography>
                 <Table columns={columns} dataSource={transactions} />
             </Content>
