@@ -1,10 +1,15 @@
+import { Layout } from 'antd'
 import './App.scss'
-import { LayoutComponent } from './components/Layout'
+import { HeaderComponent } from './components/Header'
+import { MainComponent } from './components/Main'
 
 function App() {
 
   return (
-    <LayoutComponent />
+    <Layout className="app-layout">
+        <HeaderComponent />
+        <MainComponent />
+    </Layout>
   )
 }
 

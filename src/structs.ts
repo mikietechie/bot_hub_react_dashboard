@@ -37,4 +37,5 @@ export interface ITransaction {
     referral_id: null | string
     created_at: string
     external_id: null | string
+    creation?: Date
   }

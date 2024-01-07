@@ -1,0 +1,53 @@
+.header-component {
+    .ant-layout-content {
+        .ant-row {
+            .ant-col {
+                display: flex;
+                align-items: center;
+                &,* {
+                    line-height: 100%;
+                }
+                &:nth-of-type(1) {
+                    font-size: 22px;
+                    line-height: 29px;
+                    font-weight: 600;
+                }
+                &:nth-of-type(2) {
+                    padding-left: 24px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    font-weight: 500;
+                    @media (max-width: 576px) {
+                        & > div {
+                            text-align: end;
+                            width: 100%;
+                        }
+                    }
+                }
+                &:nth-of-type(3) {
+                    @media (max-width: 576px) {
+                        display: none;
+                    }
+                    .user-details-space {
+                        border-width: 1px;
+                        border-style: solid;
+                        // padding: 8px 14px 8px 14px;
+                        border-radius: 6px;
+
+                        .ant-space-item {
+                            .login-status-text {
+                                font-size: 12px;
+                                opacity: 1;
+                            }
+                            .role-text {
+                                font-size: 14px;
+                                opacity: 1;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,86 @@
-$dark-bg: #121825;
+$dark: #121825;
+$black: #0E0C15;
+$active: #1C64F2;
 
+body {
+  background-color: $black;
+  * {
+    border-color: #222B44 !important;
+  }
+}
+
+
+// Utilities
 .dark-bg {
-  background-color: $dark-bg;
+  background-color: $dark !important;
+}
+.black-bg {
+  background-color: $dark !important;
+}
+.white-fg {
+  color: #fff !important;
+}
+.active-fg {
+  &, * {
+    color: $active !important;
+  }
+}
+
+.tp6002026 {
+  font-weight: 600;
+  line-height: 26px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+// Ant Overides
+
+.ant-table-pagination {
+  justify-content: center !important;
+
+  .ant-pagination-item-active {
+    background-color: $active;
+  }
+  .ant-pagination-options {
+    display: none;
+  }
+}
+
+.ant-table-content {
+  overflow-x: auto;
+}
+
+.ant-table {
+  * {
+    color: #fff !important;
+  }
+  th, td {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  background-color: $dark !important;
+  thead {
+    th {
+      background-color: $black !important;
+      
+    }
+  }
+  tbody {
+
+    tr.ant-table-row {
+      &:hover > td {
+        background: none !important;
+      }
+      td {
+        button {
+          border-width: 0px;
+          * {
+            color: $active !important;
+          }
+        }
+      }
+    }
+  }
+  
 }

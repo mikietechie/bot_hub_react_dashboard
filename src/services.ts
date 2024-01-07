@@ -7,9 +7,13 @@ interface IUserListResponse {
     pages: number
 }
 
-const USERS: IUser[] = Array(20).fill(
-    {
-        id: "string",
+const USERS: IUser[] = []
+const TRANSACTIONS: ITransaction[] = []
+const now = new Date()
+
+for (let i = 0; i < 100; i++) {
+    USERS.push({
+        id: `user-${i}`,
         email: "hey@m.com",
         tg_id: null,
         name: "Hey Dude",
@@ -32,15 +36,12 @@ const USERS: IUser[] = Array(20).fill(
                 tokens: 500,
             }
         }
-    }
-)
-
-
-const TRANSACTIONS: ITransaction[] = Array(10).fill(
-    {
-        id: "string",
+    })
+    now.setHours(now.getHours() + 1)
+    TRANSACTIONS.push({
+        id: "string" + Math.random(),
         provider: "string",
-        amount: 10,
+        amount: parseInt((100 * Math.random()).toString()) + 50,
         currency: "string",
         meta: null,
         status: "string",
@@ -48,24 +49,41 @@ const TRANSACTIONS: ITransaction[] = Array(10).fill(
         plan_id: "string",
         user_id: "string",
         referral_id: "string",
-        created_at: "string",
+        created_at: now.toJSON(),
         external_id: "string",
-    }
-)
+    })
+
+}
 
 export class DS {
     public static async getUsersList(): Promise<IUserListResponse> {
-        return {
-            data: USERS,
-            pages: 1
+        try {
+            const res = await fetch(`${baseURL}/user/list`)
+            if (!res.ok) {
+                alert("Server https://test.gefara.xyz/api/v1 is down, dummy data will be used!")
+                throw new Error("No Live Data")
+            }
+            return res.json()
+        } catch (error) {
+            return {
+                data: USERS,
+                pages: 1
+            }
         }
-        // const res = await fetch(`${baseURL}/user/list`)
-        // return res.json()  
     }
 
     public static async getUserTransactions(userID: string): Promise<ITransaction[]> {
-        return TRANSACTIONS
-        const res = await fetch(`${baseURL}/user/${userID}/transactions`)
-        return res.json()
+        let transactions: ITransaction[]
+        try {
+            const res = await fetch(`${baseURL}/user/${userID}/transactions`)
+            if (!res.ok) throw new Error("No Live Data")
+            transactions =  res.json() as never as ITransaction[]
+        } catch (error) {
+            transactions =  TRANSACTIONS
+        }
+        transactions.forEach(t => {
+            t.creation = new Date(t.created_at)
+        })
+        return transactions
     }
 }
