@@ -78,7 +78,7 @@ export const DrawerComponent: FC<{ user: IUser, close: VoidFunction }> = ({ user
                     <Area {...chartConf} />
                 }
 
-                <Typography className="tp6002026 white-fg" >История операций</Typography>
+                <Typography className="tp6002026 white-fg" style={{paddingBottom: "16px"}}>История операций</Typography>
                 <Table columns={columns} dataSource={transactions} />
             </Content>
         </Drawer>

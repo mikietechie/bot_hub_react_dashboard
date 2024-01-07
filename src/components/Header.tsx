@@ -11,14 +11,13 @@ export const HeaderComponent: FC = () => {
             <Content>
                 <Row>
                     <Col>
-                    <div>
-                    BitTest
-                    </div>
+                        <div>
+                            BitTest
+                        </div>
                     </Col>
                     <Col flex={"auto"}>
-
                         <div className="">
-                        <BankOutlined />&nbsp;My Organization
+                            <BankOutlined />&nbsp;My Organization
                         </div>
                     </Col>
                     <Col className="">

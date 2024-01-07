@@ -85,12 +85,12 @@ export const MainComponent: FC = () => {
 
     return (
         <>
-            <Content className="main-component">
+            <Content className="main-component white-fg">
                 <Row gutter={16}>
                     <Col span={24} style={{marginBottom: "16px"}}>
-                        <Typography style={{fontWeight: 600, lineHeight: "26px", fontSize: "20px"}}>Моя организация</Typography>
+                        <Typography className="tp6002026">Моя организация</Typography>
                         <Divider ></Divider>
-                        <Typography style={{fontWeight: 600, lineHeight: "26px", fontSize: "20px"}}>Пользователи</Typography>
+                        <Typography className="tp6002026">Пользователи</Typography>
                     </Col>
                     <Col span={24} style={{}}>
                         <Form.Item>
