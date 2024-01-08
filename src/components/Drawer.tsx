@@ -15,7 +15,7 @@ const columns: ColumnsType<ITransaction> = [
         title: "Tip",
         dataIndex: "tip",
         key: "id",
-        render: () => <>{"Nokia"}</>
+        render: (_, t) => <>{t.type}</>
     },
     {
         title: "Amount",
@@ -70,8 +70,8 @@ export const DrawerComponent: FC<{ user: IUser, close: VoidFunction }> = ({ user
 
         <Drawer title="" className="drawer-component dark-bg" placement="right" open={Boolean(user)} onClose={close}>
             <Content>
-                <Paragraph className="tp6002026 white-fg">{user.email}&nbsp;<CloseOutlined onClick={close} style={{ "float": "right" }} /></Paragraph>
-                <Paragraph className="tp6002026 white-fg">{user.name}</Paragraph>
+                <Paragraph className="tp6002026 white-fg">{user.name}&nbsp;<CloseOutlined onClick={close} style={{ "float": "right" }} /></Paragraph>
+                <Paragraph className="tp6002026 white-fg">{user.email}</Paragraph>
                 {
                     transactions.length &&
                     <Area {...chartConf} />

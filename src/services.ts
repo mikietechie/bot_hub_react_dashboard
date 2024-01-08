@@ -76,11 +76,13 @@ export class DS {
         let transactions: ITransaction[]
         try {
             const res = await fetch(`${baseURL}/user/${userID}/transactions`)
+            console.log(res)
             if (!res.ok) throw new Error("No Live Data")
-            transactions =  res.json() as never as ITransaction[]
+            transactions =  await res.json() as never as ITransaction[]
         } catch (error) {
             transactions =  TRANSACTIONS
         }
+        console.log(transactions);
         transactions.forEach(t => {
             t.creation = new Date(t.created_at)
         })
