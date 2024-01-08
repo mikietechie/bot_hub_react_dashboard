@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { ITransaction, IUser } from "../structs";
 import { DS } from "../services";
 import "./Drawer.scss"
-import { Drawer, Table, Typography } from "antd";
+import { Divider, Drawer, Table, Typography } from "antd";
 import Paragraph from "antd/es/typography/Paragraph";
 import { Content } from "antd/es/layout/layout";
 import { CloseOutlined } from "@ant-design/icons";
@@ -76,6 +76,7 @@ export const DrawerComponent: FC<{ user: IUser, close: VoidFunction }> = ({ user
                     transactions.length &&
                     <Area {...chartConf} />
                 }
+                <Divider />
                 <Typography className="tp6002026 white-fg" style={{paddingBottom: "16px"}}>История операций</Typography>
                 <Table columns={columns} dataSource={transactions} />
             </Content>

@@ -82,7 +82,8 @@ export class DS {
         } catch (error) {
             transactions =  TRANSACTIONS
         }
-        console.log(transactions);
+        // transactions =  TRANSACTIONS
+        // console.log(transactions);
         transactions.forEach(t => {
             t.creation = new Date(t.created_at)
         })
